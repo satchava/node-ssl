@@ -30,4 +30,9 @@ jobs:
           echo "Workspcae/repo : $WORKSPACE"
           echo "Vault Usename: $VAULT_USER"
           echo "Vault Secret key: $VAULT_KEY"
+        env:
+          WORKSPACE: "${{ github.workspace }}"
+          MACHINE: "${{ runner.os }}"
+          VAULT_USER: "${{ secrets.VAULT_USER }}"
+          VAULT_KEY: "${{ secrets.VAULT_KEY }}"
           
