@@ -22,8 +22,8 @@ jobs:
         env:
           WORKSPACE: "${{ github.workspace }}"
           MACHINE: "${{ runner.os }}"
-          VAULT_USER: "${{secrets.VAULT_USER}}"
-          VAULT_KEY: "${{secret.VAULT_KEY}}"
+          VAULT_USER: "${{ secrets.VAULT_USER }}"
+          VAULT_KEY: "${{ secrets.VAULT_KEY }}"
       - name: Print the secrets on the console
         run: |
           echo "Machine OS: $MACHINE"
