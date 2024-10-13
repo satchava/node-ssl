@@ -16,16 +16,18 @@ jobs:
       # Step 1: Checkout code from repository
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Display Secrets
+      - name: Set Environment Variables
         run: |
           echo "Displaying environment variables"
         env:
           WORKSPACE: "${{ github.workspace }}"
           MACHINE: "${{ runner.os }}"
           VAULT_USER: "${{secrets.VAULT_USER}}"
-          VAULT_KEY: "{{secret.VAULT_KEY}}"
+          VAULT_KEY: "${{secret.VAULT_KEY}}"
       - name: Print the secrets on the console
         run: |
+          echo "Machine OS: $MACHINE"
+          echo "Workspcae/repo : $WORKSPACE"
           echo "Vault Usename: $VAULT_USER"
           echo "Vault Secret key: $VAULT_KEY"
           
